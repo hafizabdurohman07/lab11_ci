@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title ?? 'My Website' ?></title>
+    <link rel="stylesheet" href="<?= base_url('/style.css');?>">
+</head>
+
+<body>
+
+<div id="container">
+
+<header>
+<h1>Layout Sederhana</h1>
+</header>
+
+<nav>
+<a href="<?= base_url('/') ?>">Home</a>
+<a href="<?= base_url('/artikel') ?>">Artikel</a>
+<a href="<?= base_url('/about') ?>">About</a>
+<a href="<?= base_url('/contact') ?>">Kontak</a>
+</nav>
+
+<section id="wrapper">
+
+<section id="main">
+<?= $this->renderSection('content') ?>
+</section>
+
+<aside id="sidebar">
+
+<?= view_cell('App\\Cells\\ArtikelTerkini::render') ?>
+
+<div class="widget-box">
+<h3>Widget Header</h3>
+<ul>
+<li><a href="#">Widget Link</a></li>
+<li><a href="#">Widget Link</a></li>
+</ul>
+</div>
+
+<div class="widget-box">
+<h3>Widget Text</h3>
+<p>Contoh widget text.</p>
+</div>
+
+</aside>
+
+</section>
+
+<footer>
+<p>&copy; 2024</p>
+</footer>
+
+</div>
+
+</body>
+</html>
